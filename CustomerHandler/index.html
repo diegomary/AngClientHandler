@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+	 <link href="page_style.css" rel="stylesheet" />
+	<script src="jquery-2.1.0.js"></script>
+    <script src="angular.js"></script>
+    <script src="angular-animate.js"></script>
+    <link href="animate.css" rel="stylesheet" />
+   
+</head>
+<body style="background-color:red"  data-ng-app="moduleApp129">
+    <div style="background-color:blue" data-ng-controller="CustomerController">
+        Name:<br />
+        <input type="text" data-ng-model="inputData.name" placeholder="name" />
+        <br />
+        City:<br />
+        <input type="text" data-ng-model="inputData.city" placeholder="city" />
+        <br />
+        <button data-ng-click="addCustomer()">Add Customer</button>
+        <br />
+        <br />
+        Name: <input type="text" ng-model="nametosearch" placeholder="Type something" />&nbsp;&nbsp; {{ nametosearch }}
+        <button data-ng-click="getData()">Get Customers</button>
+        <button data-ng-click="saveData()">Save Customers</button>
+        <ul class="customers">
+            <li ng-repeat="cust in customers | filter:nametosearch |orderBy:'name'">
+                <input type="text" style="width:80px" name="input1" ng-model="cust.name" />
+                <input type="text" style="width:80px" name="input2" ng-model="cust.city" />
+                <button data-ng-click="getInnerData(cust.name)">Get Name</button>
+                <button data-ng-click="getInnerData(cust.city)">Get City</button>               
+            </li>
+        </ul>
+     
+    </div>
+    <div data-ng-controller="OrderController">
+        {{ codeName }}
+    </div>
+    <div data-ng-controller="DetailsController">
+        {{ detailName }}
+    </div>
+
+    <script src="appcore.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
